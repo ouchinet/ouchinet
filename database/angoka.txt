@@ -1,0 +1,15 @@
+<?php
+    // 暗号化
+    const AES_KEY = "sdzjkfsl_key";
+    const AES_IV= "sdzjkfsl_iv";
+        
+    function encrypt($data){
+        return $data === null ? null :
+            openssl_encrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+    }
+
+    function decrypt($data){
+        return $data === null ? null :
+            openssl_decrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+    }
+?>

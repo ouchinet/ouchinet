@@ -16,12 +16,12 @@
 <body>
     <form action="check.php" method="post">
         <label for="username">ユーザー名:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username">
 
         <br>
 
         <label for="username">パスワード:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password">
 
         <br>
 
@@ -30,7 +30,7 @@
         <a href="../password-reset">パスワードを忘れた</a>
         <a href="../username-reset">ユーザー名を忘れた</a>
         <br>
-        <a>アカウントを作成</a>
+        <a href="../account-create">アカウントを作成</a>
     </form>
 </body>
 </html>

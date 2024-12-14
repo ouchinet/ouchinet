@@ -1,4 +1,18 @@
-<?php 
+<?php
+    // 暗号化
+    const AES_KEY = "sdzjkfsl_key";
+    const AES_IV= "sdzjkfsl_iv";
+        
+    function encrypt($data){
+        return $data === null ? null :
+            openssl_encrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+    }
+
+    function decrypt($data){
+        return $data === null ? null :
+            openssl_decrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $user = $_POST["username"];
         $password = $_POST["password"];
@@ -16,7 +30,48 @@
             $message = "パスワードを入力してください";
             $error = true;
         }else{
-            
+            // ユーザーリストを取得
+            $userlist = file_get_contents("../database/account/list.json");
+            $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+            $userlist = json_decode($json);
+
+            // ログイン処理
+            if($password === decrypt($userlist->$user->password)){
+                // ログイン成功
+                setcookie(
+                    "username",
+                    encrypt($user),
+                    time() + (60 * 60 * 24 * 400), // 400日間有効
+                    "../",
+                    null,
+                    true,
+                    true,
+                );
+                setcookie(
+                    "password",
+                    encrypt($password),
+                    time() + (60 * 60 * 24 * 400), // 400日間有効
+                    "../",
+                    null,
+                    true,
+                    true,
+                );
+                setcookie(
+                    "login",
+                    true,
+                    time() + (60 * 60 * 24 * 400), // 400日間有効
+                    "../",
+                    null,
+                    true,
+                    true,
+                );
+                
+                header("Location:../home");
+                exit();
+            }else{
+                $message = "ユーザー名またはパスワードが間違っています。";
+                $error = true;
+            }
         }
     } else if(isset($_COOKIE["login"]) !== false){
         header("Location:../home");
@@ -26,6 +81,7 @@
         exit();
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -35,13 +91,13 @@
         <?php
             if($error){
                 echo "内容にエラーがあります | おうちネット";
-            }else{
-                echo "";
             }
         ?>
     </title>
 </head>
 <body>
-    
+    <h1>内容にエラーがあります</h1>
+    <p style="border-radius: 10px;background-color:red;width:250px;">エラー内容：<?php echo $message;?></p>
+    <a href="index.php">ログイン画面に戻る</a>
 </body>
 </html>
