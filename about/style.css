@@ -1,0 +1,24 @@
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: #ffffff;
+    }
+
+    a,p,h1,h2,h3,h4,h5,h6,label{
+        text-decoration: none;
+        color: #000000;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #1b1b1b;
+    }
+
+    a,p,h1,h2,h3,h4,h5,h6,label{
+        text-decoration: none;
+        color: #ffffff;
+    }
+}
+
+html{
+    text-align: center;
+}

@@ -18,8 +18,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン | おうちネット</title>
+    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="../database/ouchinet.png" style="border-radius: 100%;width: 5em;">
+    <h1>ログイン</h1>
     <form action="check.php" method="post">
         <label for="username">ユーザー名:</label>
         <input type="text" id="username" name="username">
@@ -36,7 +40,7 @@
         <a href="../password-reset">パスワードを忘れた</a>
         <a href="../username-reset">ユーザー名を忘れた</a>
         <br>
-        <a href="../account-create">アカウントを作成</a>
+        <a href="../account-create"><p style="margin-top: 10px">アカウント作成</p></a>
     </form>
 </body>
 </html>

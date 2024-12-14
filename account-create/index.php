@@ -1,9 +1,9 @@
 <?php
     // 既にログインされていたらホームへ移動
-    if(isset($_COOKIE["login"]) !== false){
+    /*if(isset($_COOKIE["login"]) !== false){
         header("Location:../home");
         exit();
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アカウント作成 | おうちネット</title>
+    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="../database/ouchinet.png" style="border-radius: 100%;width: 5em;">
+    <h1>アカウント作成</h1>
     <form action="check.php" method="post">
         <label for="email">メールアドレス:</label>
         <input type="email" id="email" name="email">
+        <p>※復元に使用します。</p>
 
         <br>
 
@@ -54,10 +59,9 @@
 
         <br>
         <a href="../password-reset">パスワードを忘れた</a>
-        <br>
         <a href="../username-reset">ユーザー名を忘れた</a>
         <br>
-        <a href="../login">ログイン</a>
+        <a href="../login"><p style="margin-top: 10px">ログイン</p></a>
     </form>
 </body>
 </html>
