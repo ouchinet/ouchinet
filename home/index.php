@@ -1,10 +1,4 @@
 <?php
-    // 先にログインデータがあるか聞く
-    if(isset($_COOKIE["login"]) === false){
-        header("Location:../login");
-        exit();
-    }
-
     // 暗号化
     const AES_KEY = "sdzjkfsl_key";
     const AES_IV= "sdzjkfsl_iv";
@@ -22,17 +16,21 @@
     // ユーザーリストを取得
     $userlist = file_get_contents("../database/account/list.json");
     $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-    $userlist = json_decode($json);
+    $userlist = json_decode($username,true);
 
     // パスワードがあってない、またはログインされてない場合はログイン画面へ
+    try{
     if(
-        $_COOKIE["password"] !== decrypt($userlist-> $_COOKIE["username"]->$_COOKIE["password"])
+        $_COOKIE["password"] !== $userlist[$_COOKIE["username"]]["password"]
         ||
-        $_COOKIE["login"]!== true
+        $_COOKIE["login"] !== "true"
     ){
         header("Location:../login");
         exit();
+    }else{
+        echo "";
     }
+    } catch(Exception){}
 ?>
 
 <!DOCTYPE html>

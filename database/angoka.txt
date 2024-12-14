@@ -1,7 +1,7 @@
 <?php
     // 暗号化
-    const AES_KEY = "sdzjkfsl_key";
-    const AES_IV= "sdzjkfsl_iv";
+    const AES_KEY = "oklyuodzjkfsl_key";
+    const AES_IV= "oklyuodzjkfsl_iv";
         
     function encrypt($data){
         return $data === null ? null :

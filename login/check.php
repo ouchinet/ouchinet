@@ -1,7 +1,7 @@
 <?php
     // 暗号化
-    const AES_KEY = "sdzjkfsl_key";
-    const AES_IV= "sdzjkfsl_iv";
+    const AES_KEY = "oklyuodzjkfsl_key";
+    const AES_IV= "oklyuodzjkfsl_iv";
         
     function encrypt($data){
         return $data === null ? null :
@@ -33,40 +33,40 @@
             // ユーザーリストを取得
             $userlist = file_get_contents("../database/account/list.json");
             $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-            $userlist = json_decode($json);
+            $userlist = json_decode($userlist,true);
 
             // ログイン処理
-            if($password === decrypt($userlist->$user->password)){
+            if($password === decrypt($userlist[$user]["password"])){
                 // ログイン成功
                 setcookie(
                     "username",
-                    encrypt($user),
+                    $user,
                     time() + (60 * 60 * 24 * 400), // 400日間有効
-                    "../",
+                    "/",
                     null,
                     true,
                     true,
                 );
                 setcookie(
                     "password",
-                    encrypt($password),
+                    urldecode(encrypt($password)),
                     time() + (60 * 60 * 24 * 400), // 400日間有効
-                    "../",
+                    "/",
                     null,
                     true,
                     true,
                 );
                 setcookie(
                     "login",
-                    true,
+                    "true",
                     time() + (60 * 60 * 24 * 400), // 400日間有効
-                    "../",
+                    "/",
                     null,
                     true,
                     true,
                 );
                 
-                header("Location:../home");
+                echo "<script>location.href='../home'</script>";
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";
