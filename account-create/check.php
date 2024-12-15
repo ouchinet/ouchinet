@@ -1,16 +1,13 @@
 <?php
     // 暗号化
-    const AES_KEY = json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-key"];
-    const AES_IV= json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-iv"];
-        
     function encrypt($data){
         return $data === null ? null :
-            openssl_encrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+            openssl_encrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
     }
 
     function decrypt($data){
         return $data === null ? null :
-            openssl_decrypt($data, "AES-256-CBC", AES_KEY, 0, AES_IV);
+            openssl_decrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
@@ -30,6 +27,9 @@
             }
         }else if($password === ""){
             $message = "パスワードを入力してください";
+            $error = true;
+        }elseif($email === ""){
+            $message = "メールアドレスを入力してください";
             $error = true;
         }else{
             // ユーザーリストを取得
@@ -65,6 +65,7 @@
             if($error === false){
                 $userlist[$user] = [
                     "name" => $user,
+                    "email" => $email,
                     "password" => encrypt($password)
                 ];
 
