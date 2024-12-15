@@ -1,4 +1,15 @@
+<div align="center">
+  
 # おうちネット
+
+<a href="https://blog.webfullsympathy.com/ouchinet">
+  <img src="./database/ouchinet.png" alt="おうちネットロゴ" width="70em">
+</a>
+
+
+[<img src="https://skillicons.dev/icons?i=html">](https://ja.wikipedia.org/wiki/HyperText_Markup_Language)
+[<img src="https://skillicons.dev/icons?i=css">](https://ja.wikipedia.org/wiki/Cascading_Style_Sheets)
+[<img src="https://skillicons.dev/icons?i=php">](https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
 
 ## 概要
 家庭などでで気軽に使える小規模向けSNSです。
@@ -11,3 +22,4 @@
 ## セキュリティ面
 セキュリティがよわよわです。
 セキュリティ面を少しでも強くする内容のブログを後日公開します。
+</div>
