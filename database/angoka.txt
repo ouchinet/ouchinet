@@ -1,5 +1,5 @@
 <?php
-    // 暗号化
+    // 暗号化です。パスワード等の一部のデータはこのPHPコードを使用してください。
     const AES_KEY = json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-key"];
     const AES_IV= json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-iv"];
         

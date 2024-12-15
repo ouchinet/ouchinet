@@ -1,5 +1,6 @@
 <?php
     $version = file_get_contents("../database/version");
+    $servername = json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["server-name"];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -21,9 +22,12 @@
     </p>
     <h1>このおうちネットについて</h1>
     <p>
+        このおうちネットのサーバ名は「<?php echo $servername?>」です。
+        <br>
         このおうちネットのバージョンは「<?php echo $version?>」です。
         <br>
-        詳細はGitHubのリリースからご確認ください。
+        詳細は<a href="https://github.com/webfullsympathy/ouchinet/releases">GitHubのリリース</a>からご確認ください。
     </p>
+    </body>
 </body>
 </html>
