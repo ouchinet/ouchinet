@@ -1,7 +1,7 @@
 <?php
     // 暗号化
-    const AES_KEY = "sdzjkfsl_key";
-    const AES_IV= "sdzjkfsl_iv";
+    const AES_KEY = json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-key"];
+    const AES_IV= json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes-iv"];
         
     function encrypt($data){
         return $data === null ? null :

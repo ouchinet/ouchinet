@@ -1,9 +1,9 @@
 <?php
     // 既にログインされていたらホームへ移動
-    /*if(isset($_COOKIE["login"]) !== false){
+    if(isset($_COOKIE["login"]) !== false){
         header("Location:../home");
         exit();
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
