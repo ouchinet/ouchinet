@@ -23,7 +23,14 @@
         header("Location:../login");
         exit();
     }
-    } catch(error){echo "Error:" . $error; exit();}
+    } catch(error){exit();}
+
+    // アイコン処理
+    if($userlist[$_COOKIE["username"]]["icon"] === "default"){
+        $iconurl = "../asset/gui/profile-icon.png";
+    }else{
+        $iconurl = "../database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +39,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム | おうちネット</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
-    <img src="../asset/gui/profile-icon.png" style="border-radius: 100%;width: 5em;">
-    <script src="script.js"></script>
+    <div id="pc">
+        <div class="display">
+            <div class="ds sidebar">
+                <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
+                    <img src="<?php echo $iconurl;?>" style="border-radius: 100%;width: 5em;">
+                </a>
+            </div>
+
+            <div class="ds main">
+                <h1 id="tl-txtbar">タイムライン</h1>
+
+                <div class="new-post">
+                <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
+                    <img src="<?php echo $iconurl;?>" style="border-radius: 100%;width: 5em;">
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile" style="display:none">
+    </div>
 </body>
 </html>
