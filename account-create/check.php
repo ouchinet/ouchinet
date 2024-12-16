@@ -64,9 +64,9 @@
 
             if($error === false){
                 $userlist[$user] = [
-                    "name" => $user,
-                    "email" => $email,
-                    "password" => encrypt($password)
+                    "name" => urlencode($user),
+                    "email" => urlencode($email),
+                    "password" => urlencode(encrypt($password))
                 ];
 
                 file_put_contents("../database/account/list.json", json_encode($userlist, JSON_PRETTY_PRINT));

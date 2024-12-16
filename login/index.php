@@ -1,9 +1,5 @@
 <?php
     // 既にログインされていたらホームへ移動
-    if(isset($_COOKIE["login"]) !== false){
-        header("Location:../home");
-        exit();
-    }
     if(isset($_COOKIE["login"])){
         if($_COOKIE["login"] === "true"){
             header("Location:../home");

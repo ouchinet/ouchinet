@@ -33,11 +33,11 @@
             $userlist = json_decode($userlist,true);
 
             // ログイン処理
-            if($password === decrypt($userlist[$user]["password"])){
+            if($password=== decrypt(urldecode($userlist[$user]["password"]))){
                 // ログイン成功
                 setcookie(
                     "username",
-                    $user,
+                    urlencode($user),
                     time() + (60 * 60 * 24 * 400), // 400日間有効
                     "/",
                     null,
@@ -46,7 +46,7 @@
                 );
                 setcookie(
                     "password",
-                    urldecode(encrypt($password)),
+                    urlencode(encrypt($password)),
                     time() + (60 * 60 * 24 * 400), // 400日間有効
                     "/",
                     null,
@@ -63,7 +63,7 @@
                     true,
                 );
                 
-                echo "<script>location.href='../home'</script>";
+                header("Location:../home");
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";

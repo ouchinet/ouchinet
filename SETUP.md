@@ -12,7 +12,7 @@ PHPをインストールしていない方は[PHPのホームページ](https://
 
 また、コマンドラインの方法では[Git](https://git-scm.com/downloads)を使用するので事前にダウンロードしておいてください。
 
-そして、おうちネットはウェブアプリのためApacheなどのウェブサーバーソフトウェアが必要になります。
+そして、おうちネットはウェブアプリで、htaccessを使用するためApacheが必要になります。
 
 ## GUIの方法(初心者などにオススメ)
 > [!NOTE]
@@ -59,8 +59,6 @@ oklyuodzjkfsl_keyとoklyuodzjkfsl_ivになっていますがこれを適当な�
 また、これが正しく出来なかった場合、最悪データがすべて消える可能性があります。<br>
 自分で設定するのが不安な場合は[サポート](https://github.com/webfullsympathy/ouchinet?tab=readme-ov-file#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)までお問い合わせください。
 
-製作者は実機(Apache2)とXampp3.3.0でしか試していないので環境によるかもしれませんが、<br>
-Apacheを前提として話していきます。
 
 まず、Apacheを起動してください。<br>
 おうちネットがApacheの動作フォルダにない場合は移動してください。(var/www/htmlなど)<br>
