@@ -1,0 +1,6 @@
+<FilesMatch "\.(txt|json|csv)$">
+  Order deny,allow
+  Deny from all
+  Allow from 192.168.1.100 
+  # ↑自分のサーバーの "グローバル" IPアドレスに置き換える
+</FilesMatch>
