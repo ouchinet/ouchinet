@@ -65,8 +65,13 @@ oklyuodzjkfsl_keyとoklyuodzjkfsl_ivになっていますがこれを適当な�
 
 サーバーが起動したらブラウザでアクセスしてください。<br>
 ```URL
+ローカルサーバーなら
 http://localhost
 または192.168.x.xなど
+
+本番環境なら
+https://**.com
+や1**.***.**.**
 ```
 サーバーのIPが分からない場合は`ipconfig`で確認できます。
 
