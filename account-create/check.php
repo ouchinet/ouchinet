@@ -64,6 +64,7 @@
 
             if($error === false){
                 $userlist[$user] = [
+                    "number" => intval(file_get_contents("../database/account/account-number.txt")) + 1,
                     "name" => urlencode($user),
                     "email" => urlencode($email),
                     "password" => urlencode(encrypt($password)),
