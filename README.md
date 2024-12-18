@@ -31,13 +31,13 @@
 セットアップ方法は[こちら](SETUP.md)から
 
 ## サポート
-細かいことでもどうぞ！<br>
-全てを無償サポートさせていただきます！<br>
-また、このリストは上であれば上であるほど気づきやすく、下であれば下であるほど気づきにくいです。<br>
+細かいことでもどうぞ！  
+全てを無償サポートさせていただきます！  
+また、このリストは上であれば上であるほど気づきやすく、下であれば下であるほど気づきにくいです。  
 
-[・X(旧Twitter)・・・DMまたはメンションで！](https://x.com/webfullsympathy)<br>
-[・Discord・・・DMで！：@webfullsympathy]()<br>
-[・メール・・・そのままOK！件名も適当でOKです！：info@webfullsympathy.com](mailto:info@webfullsympathy.com)<br>
-[・BlueSky・・・DMまたはメンションで！](https://bsky.app/profile/bsky.webfullsympathy.com)<br>
-[・ActivePub・・・MisskeyやMastodonのDMまたはメンションで！](https://misskey.io/@webfullsympathy)<br>
+[・X(旧Twitter)・・・DMまたはメンションで！](https://x.com/webfullsympathy)  
+[・Discord・・・DMで！：@webfullsympathy]()  
+[・メール・・・そのままOK！件名も適当でOKです！：info@webfullsympathy.com](mailto:info@webfullsympathy.com)  
+[・BlueSky・・・DMまたはメンションで！](https://bsky.app/profile/bsky.webfullsympathy.com)  
+[・ActivePub・・・MisskeyやMastodonのDMまたはメンションで！](https://misskey.io/@webfullsympathy)  
 </div>
