@@ -1,6 +1,6 @@
 <?php
 // バージョン情報を取得
-$version = @file_get_contents("../database/version");
+$version = file_get_contents("../database/version");
 $version = htmlspecialchars($version ?: "不明", ENT_QUOTES, 'UTF-8');
 
 // サーバー名を取得
