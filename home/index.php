@@ -54,10 +54,22 @@
         <a href="../home">
             <img src="../asset/gui/menu/home.png" style="border-radius: 100%;width: 5em;" title="ホーム">
         </a>
+
+        <a href="../search">
+            <img src="../asset/gui/menu/search.png" style="border-radius: 100%;width: 5em;" title="通知">
+        </a>
+
+        <a href="../notice">
+            <img src="../asset/gui/menu/notice.png" style="border-radius: 100%;width: 5em;" title="通知">
+        </a>
         </header>
+
+        <h1>タイムライン</h1>
     </div>
 
     <div id="mobile" style="display:none">
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
