@@ -253,7 +253,7 @@ main {
     .family-space .background-box {
         height: 200px;
     }
-    /* Light Mode Styles */
+
     @media (prefers-color-scheme: light) {
         body {
             background-color: var(--secondary-color-light);
@@ -274,11 +274,10 @@ main {
         }
     }
 
-    /* Dark Mode Styles */
     @media (prefers-color-scheme: dark) {
         body {
-            background-color: #121212; /* ダークな背景色 */
-            color: #e0e0e0; /* 明るいテキスト色 */
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
         header {
@@ -290,19 +289,19 @@ main {
         }
 
         .hero {
-            background-color: #1e1e1e; /* ヒーローセクションの暗い背景色 */
+            background-color: #1e1e1e;
         }
 
         .hero h1 {
-            color: #ffffff; /* 明るいテキスト色 */
+            color: #ffffff;
         }
 
         .hero span {
-            color: #4db6ac; /* 青緑色に変更 */
+            color: #4db6ac;
         }
 
         .hero p {
-            color: #b0bec5; /* 明るい灰色 */
+            color: #b0bec5;
         }
 
         .family-space {
@@ -310,7 +309,7 @@ main {
         }
 
         .family-space .background-box {
-            background: linear-gradient(135deg, #3a3a3a, #2b2b2b); /* 暗い色のグラデーション */
+            background: linear-gradient(135deg, #3a3a3a, #2b2b2b);
         }
 
         .family-space h2 {
@@ -319,16 +318,16 @@ main {
 
         .family-space p,
         .family-space .features li {
-            color: #cfcfcf; /* テキストの明るさを調整 */
+            color: #cfcfcf;
         }
 
         .family-space .features li::before {
-            color: #4db6ac; /* アイコン色を青緑に */
+            color: #4db6ac;
         }
 
         .version-info {
             background-color: rgba(0, 0, 0, 0.8);
-            color: #ffffff; /* 明るいテキスト色 */
+            color: #ffffff;
         }
     }
 
