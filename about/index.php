@@ -1,6 +1,16 @@
 <?php
-    $version = file_get_contents("../database/version");
-    $servername = json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["server-name"];
+// バージョン情報を取得
+$version = @file_get_contents("../database/version");
+$version = htmlspecialchars($version ?: "不明", ENT_QUOTES, 'UTF-8');
+
+// サーバー名を取得
+$configFile = "../database/config.json";
+$serverName = "不明";
+if (file_exists($configFile)) {
+    $configContent = file_get_contents($configFile);
+    $config = json_decode(mb_convert_encoding($configContent, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'), true);
+    $serverName = htmlspecialchars($config["server-name"] ?? "不明", ENT_QUOTES, 'UTF-8');
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -12,22 +22,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="../database/ouchinet.png" style="border-radius: 100%;width: 5em;">
-    <h1>おうちネットとは</h1>
-    <p>
-        おうちネットとは家庭などでで気軽に使える小規模向けSNSです。
-        <br>
-        分散型と似ていますがおうちネット同士では投稿を同期しなく、個別でのみデータを保管します。
-        <br>
-    </p>
-    <h1>このおうちネットについて</h1>
-    <p>
-        このおうちネットのサーバ名は「<?php echo $servername?>」です。
-        <br>
-        このおうちネットのバージョンは「<?php echo $version?>」です。
-        <br>
-        詳細は<a href="https://github.com/webfullsympathy/ouchinet/releases">GitHubのリリース</a>からご確認ください。
-    </p>
-    </body>
+<header>
+    <h1>OUCHINET</h1>
+    <p>大切な人とつながる、あたたかいSNS</p>
+    <div class="version-info">
+        v <?php echo $version; ?>
+    </div>
+</header>
+<section class="hero">
+    <div class="container">
+        <h1>家族の<span>思い出</span>をもっと身近に</h1>
+        <p>家族みんなで使えるシンプルで安心なSNS。 写真や文章を簡単に共有し、大切な思い出をいつでも振り返ることができます。</p>
+    </div>
+</section>
+<section class="family-space animate-on-scroll">
+    <div class="content">
+        <h2>安心して使える、<br>家族のための空間</h2>
+        <p>
+            安心のプライバシー設定で、誰もが安心して利用可能。
+            プライベート空間で、あなたの大切な思い出を守ります。
+        </p>
+        <ul class="features">
+            <li>安全な環境</li>
+            <li>簡単な操作性</li>
+            <li>データの永久保存</li>
+        </ul>
+    </div>
+    <div class="background-box"></div>
+</section>
 </body>
 </html>
