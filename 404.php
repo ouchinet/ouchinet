@@ -20,17 +20,11 @@
     // パスワードがあってない、またはログインされてない場合はログイン画面へ
     try{
     if(decrypt(urldecode($_COOKIE["password"])) !== decrypt(urldecode($userlist[$_COOKIE["username"]]["password"]))){
-        header("Location:../login");
-        exit();
+        $message = "ログインされていません。<br><a href='../login'>ログイン</a>";
+    }else{
+        $message = "ログインされています。";
     }
     } catch(error){exit();}
-
-    // アイコン処理
-    if($userlist[$_COOKIE["username"]]["icon"] === "default"){
-        $iconurl = "../asset/gui/default-icon.png";
-    }else{
-        $iconurl = "../database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -38,26 +32,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム | おうちネット</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
+    <title>お探しのページが見つかりませんでした | おうちネット</title>
+    <link rel="stylesheet" href="404.css">
 </head>
 <body>
-    <div id="pc">
-        <header>
-        <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
-            <img src="
-                <?php echo $iconurl;?>
-            " style="border-radius: 100%;width: 5em;" title="プロフィール">
-        </a>
-
-        <a href="../home">
-            <img src="../asset/gui/menu/home.png" style="border-radius: 100%;width: 5em;" title="ホーム">
-        </a>
-        </header>
-    </div>
-
-    <div id="mobile" style="display:none">
-    </div>
+    <h1>お探しのページが見つかりませんでした。</h1>
+    <p>あなたは、<?php echo $message;?></p>
 </body>
 </html>

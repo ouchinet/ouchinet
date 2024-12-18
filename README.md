@@ -12,16 +12,12 @@
 [<img src="https://skillicons.dev/icons?i=php">](https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E))
 
 ## 概要
-家庭などでで気軽に使える小規模向けSNSです。  
+家庭などでで気軽に使える小規模向けSNSです。
 分散型と似ていますがおうちネット同士では投稿を同期しなく、個別でのみデータを保管します。
 
 ## アイコン
-一部のアイコンはChatGPTが生成しています。
-
-### 生成に使用したチャット
-|名前|リンク| 
-|-|-| 
-|ロゴ|[こちら](https://chatgpt.com/share/675d4f82-4708-800d-bcc0-b7681e461475)| 
+アイコンはChatGPTが生成しました。
+生成に使用したチャットは[こちら](https://chatgpt.com/share/675d4f82-4708-800d-bcc0-b7681e461475)
 
 ## セキュリティ面
 セキュリティがよわよわです。
@@ -31,13 +27,13 @@
 セットアップ方法は[こちら](SETUP.md)から
 
 ## サポート
-細かいことでもどうぞ！  
-全てを無償サポートさせていただきます！  
-また、このリストは上であれば上であるほど気づきやすく、下であれば下であるほど気づきにくいです。  
+細かいことでもどうぞ！<br>
+全てを無償サポートさせていただきます！<br>
+また、このリストは上であれば上であるほど気づきやすく、下であれば下であるほど気づきにくいです。<br>
 
-[・X(旧Twitter)・・・DMまたはメンションで！](https://x.com/webfullsympathy)  
-[・Discord・・・DMで！：@webfullsympathy]()  
-[・メール・・・そのままOK！件名も適当でOKです！：info@webfullsympathy.com](mailto:info@webfullsympathy.com)  
-[・BlueSky・・・DMまたはメンションで！](https://bsky.app/profile/bsky.webfullsympathy.com)  
-[・ActivePub・・・MisskeyやMastodonのDMまたはメンションで！](https://misskey.io/@webfullsympathy)  
+[・X(旧Twitter)・・・DMまたはメンションで！](https://x.com/webfullsympathy)<br>
+[・Discord・・・DMで！：@webfullsympathy]()<br>
+[・メール・・・そのままOK！件名も適当でOKです！：info@webfullsympathy.com](mailto:info@webfullsympathy.com)<br>
+[・BlueSky・・・DMまたはメンションで！](https://bsky.app/profile/bsky.webfullsympathy.com)<br>
+[・ActivePub・・・MisskeyやMastodonのDMまたはメンションで！](https://misskey.io/@webfullsympathy)<br>
 </div>
