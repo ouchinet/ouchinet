@@ -18,7 +18,7 @@ PHPをインストールしていない方は[PHPのホームページ](https://
 > [!NOTE]
 > これはおうちネットをセットアップしたいサーバーで行ってください。
 
-まず、[GitHub](https://github.com/webfullsympathy/ouchinet)からCodeをクリックしてください。
+まず、[GitHub](https://github.com/ouchinet/ouchinet)からCodeをクリックしてください。
 
 <img src="./asset/setup/donyu/github-code.png" width="100em">
 
@@ -26,11 +26,11 @@ PHPをインストールしていない方は[PHPのホームページ](https://
 
 <img src="./asset/setup/donyu/github-downloadzip.png" width="250em">
 
-保存先が問われるのでおうちネットを使用したいフォルダを選択してください。<br>
-すると、「ouchinet-main.zip」がダウンロードされます。<br>
-このZipファイルを何らかのソフトウェアで展開してください。<br>
-ほとんどのOSでは標準で展開できます。<br>
-それで出来たフォルダの中に「ouchinet-main」というフォルダがあります。<br>
+保存先が問われるのでおうちネットを使用したいフォルダを選択してください。  
+すると、「ouchinet-main.zip」がダウンロードされます。  
+このZipファイルを何らかのソフトウェアで展開してください。  
+ほとんどのOSでは標準で展開できます。  
+それで出来たフォルダの中に「ouchinet-main」というフォルダがあります。  
 このフォルダがメインとなります。
 
 ここまでが分岐地点なので続きの「[導入後](#導入後)」をご覧ください。
@@ -51,55 +51,56 @@ git clone https://github.com/webfullsympathy/ouchinet.git
 ここまでが分岐地点なので「[導入後](#導入後)」をご覧ください。
 
 ## 導入後
-最初におうちネットのフォルダの中のdatabase/config.jsonからAES_KEYとAES_IVを変更してください。<br>
-oklyuodzjkfsl_keyとoklyuodzjkfsl_ivになっていますがこれを適当なやつに変更してください。<br>
-また、その適当な文字はaes_keyが「[適当な文字]_key」、aes_ivが「[適当な文字]_iv」にしてください。<br>
-また、どちらも適当な文字は同じにしてください。<br>
-ただし、適当な文字は半角小文字のみで13文字にしてください。<br>
-また、これが正しく出来なかった場合、最悪データがすべて消える可能性があります。<br>
-自分で設定するのが不安な場合は[サポート](https://github.com/webfullsympathy/ouchinet?tab=readme-ov-file#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)までお問い合わせください。
+最初におうちネットのフォルダの中のdatabase/config.jsonからAES_KEYとAES_IVを変更してください。  
+oklyuodzjkfsl_keyとoklyuodzjkfsl_ivになっていますがこれを適当なやつに変更してください。  
+また、その適当な文字はaes_keyが「[適当な文字]_key」、aes_ivが「[適当な文字]_iv」にしてください。  
+また、どちらも適当な文字は同じにしてください。  
+ただし、適当な文字は半角小文字のみで13文字にしてください。  
+また、これが正しく出来なかった場合、最悪データがすべて消える可能性があります。  
+自分で設定するのが不安な場合は[サポート](https://github.com/ouchinet/ouchinet?tab=readme-ov-file#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)までお問い合わせください。
 
 
-まず、Apacheを起動してください。<br>
-おうちネットがApacheの動作フォルダにない場合は移動してください。(var/www/htmlなど)<br>
+まず、Apacheを起動してください。  
+おうちネットがApacheの動作フォルダにない場合は移動してください。(var/www/htmlなど)  
 
-サーバーが起動したらブラウザでアクセスしてください。<br>
+サーバーが起動したらブラウザでアクセスしてください。  
 ```URL
-http://localhost
-または192.168.x.xなど
+http://***.***.*.*/など
 ```
 サーバーのIPが分からない場合は`ipconfig`で確認できます。
 
 アクセスしたらログイン画面に移動されます。
 
-アカウントは事前作成されていないので下の「アカウント作成」をクリックしてください。<br>
+アカウントは事前作成されていないので下の「アカウント作成」をクリックしてください。  
 その画面でアカウント作成をしてください。
 
-ただし、ユーザー名はadminにしてください。<br>
+ただし、ユーザー名はadminにしてください。  
 adminにすることで管理者用設定が出来るようになります。
 
-また、管理者用アカウントはadminのみですのでご了承ください。<br>
+また、管理者用アカウントはadminのみですのでご了承ください。  
 サーバーの乗っ取りを防ぐため即座にパスワード変更をご見当ください。
 
 # セキュリティ上昇
 この章では、おうちネットの導入後、AES_KEYとAES_IVの設定が終わっているのを前提とします。
 
 ## データベースの保護
-まず、データの保管方法についてです。<br>
-データはdatabaseフォルダに保存されています。<br>
-それはブラウザなどで簡単にアクセスできてしまうのでアクセス制限をかけましょう。<br>
-databaseフォルダの中にある「.htaccess」を開いてください。<br>
+まず、データの保管方法についてです。  
+データはdatabaseフォルダに保存されています。  
+それはブラウザなどで簡単にアクセスできてしまうのでアクセス制限をかけましょう。  
+databaseフォルダの中にある「.htaccess」を開いてください。  
 そこには以下のコードが書いてあるはずです。
 ```
-<FilesMatch "\.(txt|json|csv)$">
-  Order deny,allow
-  Deny from all
-  Allow from 192.168.1.100
-  # ↑自分のサーバーの "グローバル" IPアドレスに置き換える
-</FilesMatch>
+<Files ~ "\.(txt|json|csv)$">
+  Require host example.com
+  Require ip ::1
+  Require all denied
+</Files>
 ```
-これの書いてある通りに4行目の`Allow from 192.168.1.100`の`192.168.1.100`を自分のサーバーのグローバルIPに置き換えてください。
+本番環境の場合はこれの2行目の`Require host example.com`の`example.com`を自分のサーバーに接続しているドメインに置き換えてください。また、ドメインを接続していない場合は2行目を`Require ip ***.***.*.*`にして、`***.***.*.*`を自分のサーバーのグローバルIPアドレスにしてください。  
+それで、3行目の`Require ip ::1`を消してください。
 
-これの変更の意味が分からない場合は[サポート](https://github.com/webfullsympathy/ouchinet?tab=readme-ov-file#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)に問い合わせて確認しながら行ってください。<br>
-間違えると最悪の場合は全ユーザーのパスワードなどが誰でも見れてしまいます。<br>
+また、開発環境の場合は2行目の`Require host example.com`を消します。
+
+これの変更の意味が分からない場合は[サポート](https://github.com/ouchinet/ouchinet?tab=readme-ov-file#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88)に問い合わせて確認しながら行ってください。  
+間違えると最悪の場合は全ユーザーのパスワードなどが誰でも見れてしまいます。  
 サポートは無料で開発者本人なので安心です。

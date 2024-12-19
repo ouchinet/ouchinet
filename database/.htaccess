@@ -1,5 +1,5 @@
 <Files ~ "\.(txt|json|csv)$">
-  Require ip 192.168.3.2
+  Require host example.com
   Require ip ::1
   Require all denied
 </Files>
