@@ -69,7 +69,5 @@
 
     <div id="mobile" style="display:none">
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
