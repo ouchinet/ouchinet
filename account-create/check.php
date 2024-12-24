@@ -69,10 +69,14 @@
                     "bio" => "",
                     "email" => urlencode($email),
                     "password" => urlencode(encrypt($password)),
-                    "icon" => "default"
+                    "icon" => "default",
+                    "post" => 0,
+                    "follow" => [],
+                    "follower" => []
                 ];
 
                 file_put_contents("../database/account/list.json", json_encode($userlist, JSON_PRETTY_PRINT));
+                file_put_contents("../database/account/account-number.txt", strval(file_get_contents("../database/account/account-number.txt")) + 1);
 
                 header("Location:../login");
                 exit();

@@ -81,7 +81,7 @@
     <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
-    <div id="pc">
+    <div>
         <header>
         <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
             <img src="
@@ -117,9 +117,6 @@
                 echo $post_html;
             }
         ?>
-    </div>
-
-    <div id="mobile" style="display:none">
     </div>
 </body>
 </html>

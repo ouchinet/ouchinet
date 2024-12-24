@@ -1,0 +1,94 @@
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: #ffffff;
+        margin: 0;
+    }
+
+    a,p,h1,h2,h3,h4,h5,h6,label,span{
+        text-decoration: none;
+        color: #000000;
+    }
+
+    button{
+        margin: 20px;
+        background-color: #ffffff;
+        color: #333333;
+        border: #333333  3px solid;
+        border-radius: 30px;
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+
+    input[type="text"]{
+        background-color: #333333;
+        color: #ffffff;
+        border: #ffffff  3px solid;
+        border-radius: 10px;
+        font-size: 1.25em;
+        cursor: pointer;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #1b1b1b;
+        margin: 0;
+    }
+
+    a,p,h1,h2,h3,h4,h5,h6,label,span{
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    button{
+        margin: 20px;
+        background-color: #333333;
+        color: #ffffff;
+        border: #ffffff  3px solid;
+        border-radius: 30px;
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+
+    input[type="text"]{
+        background-color: #333333;
+        color: #ffffff;
+        border: #ffffff  3px solid;
+        border-radius: 10px;
+        font-size: 1.25em;
+        cursor: pointer;
+    }
+}
+
+label{
+    font-size: 1.25em;
+}
+
+#icon{
+    border-radius: 100%;
+    width: 5em;
+}
+
+header{
+    width: 100%;
+    background-color: #61edff;
+    
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/*プロフィール情報*/
+#profile{
+    margin-top: 15px;
+}
+
+#name{
+    margin: 0;
+    font-weight:bold;
+    font-size: 2em;
+}
+
+#id{
+    color: #aebbc9;
+}
