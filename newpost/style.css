@@ -1,0 +1,95 @@
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: #ffffff;
+    }
+
+    #back{
+        text-decoration: none;
+        font-size: 2em;
+        color: #000000;
+    }
+
+    textarea{
+        caret-color: #000000;
+        color: #000000;
+    }
+
+    input[type="submit"]{
+        background-color: #000000;
+        border-radius: 30px;
+        color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #1b1b1b;
+        text-decoration :none;
+    }
+
+    #back{
+        text-decoration: none;
+        font-size: 2em;
+        color: #ffffff;
+    }
+
+    textarea{
+        caret-color: #ffffff;
+        color: #ffffff;
+    }
+
+    input[type="submit"]{
+        background-color: #ffffff;
+        border-radius: 30px;
+        color: #000000;
+    }
+}
+
+#text{
+    position: absolute;
+}
+
+textarea{
+    resize: none;
+    height: 4em;
+    width: 70%;
+    border: none;
+    background-color: inherit;
+    outline: none;
+}
+
+form{
+    height: 10em;
+}
+
+input[type="submit"]{
+    border: none;
+    padding: 0.5em;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+/*メッセージ*/
+.message {
+    position: fixed;
+    top: 20px;
+    right: -100%;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: right 0.25s ease-in-out;
+}
+
+.show {
+    right: 20px;
+}
+
+.error {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.noerror {
+    background-color: #00ff00;
+    color: #000000;
+}

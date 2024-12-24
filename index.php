@@ -9,5 +9,4 @@
         exit();
     }
     }catch(Exception){
-        exit();
     }

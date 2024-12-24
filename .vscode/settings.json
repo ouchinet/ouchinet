@@ -6,5 +6,6 @@
         "vue",
         "rails",
         "none"
-    ]
+    ],
+    "php.version": "8.2"
 }

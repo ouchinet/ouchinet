@@ -4,7 +4,7 @@
         margin: 0;
     }
 
-    a,p,h1,h2,h3,h4,h5,h6,label{
+    a,p,h1,h2,h3,h4,h5,h6,label,span{
         text-decoration: none;
         color: #000000;
     }
@@ -35,7 +35,7 @@
         margin: 0;
     }
 
-    a,p,h1,h2,h3,h4,h5,h6,label{
+    a,p,h1,h2,h3,h4,h5,h6,label,span{
         text-decoration: none;
         color: #ffffff;
     }
@@ -76,4 +76,30 @@ header{
     position: sticky;
     top: 0;
     z-index: 999;
+}
+
+.post{
+    width: 80%;
+    border: solid 1px #97f8ff;
+    margin-bottom: 15px;
+}
+
+#name{
+    font-size: 1.4em;
+}
+
+#id{
+    color: #aebbc9;
+}
+
+#post_icon{
+    border-radius: 100%;
+    width: 5em;
+    vertical-align: top;
+}
+
+#like{
+    border-radius: 100%;
+    width: 5em;
+    color: #71767B;
 }

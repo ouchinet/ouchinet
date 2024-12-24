@@ -24,6 +24,7 @@ if (file_exists($configFile)) {
 <body>
 <header>
     <h1>OUCHINET</h1>
+    <p><?php echo $serverName;?></p>
     <p>大切な人とつながる、あたたかいSNS</p>
     <div class="version-info">
         v <?php echo $version; ?>
@@ -50,5 +51,6 @@ if (file_exists($configFile)) {
     </div>
     <div class="background-box"></div>
 </section>
+<div style="text-align: center;"><span>Powered by Ouchinet</span></div>
 </body>
 </html>
