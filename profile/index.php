@@ -73,8 +73,7 @@
     <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
-    <div>
-        <header>
+    <header>
         <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
             <img src="
                 <?php echo $iconurl;?>
@@ -96,34 +95,33 @@
         <a href="../newpost">
             <img src="../asset/gui/menu/newpost.png" style="border-radius: 100%;width: 5em;" title="新規投稿">
         </a>
-        </header>
+    </header>
 
-        <?php
-            if(isset($message)){
-                echo $message;
-            }else{
-                echo "
-                    <div id='profile'>
-                        <img src='$usericonurl' id='icon'>
+    <?php
+        if(isset($message)){
+            echo $message;
+        }else{
+            echo "
+                <div id='profile'>
+                    <img src='$usericonurl' id='icon'>
 
-                        <br>
+                    <br>
 
-                        <span id='name'>$name</span>
-                        <span id='id'>@$user</span>
+                    <span id='name'>$name</span>
+                    <span id='id'>@$user</span>
 
-                        <br>
+                    <br>
 
-                        <span id='bio'>$bio<br></span>
+                    <span id='bio'>$bio<br></span>
 
-                        <br>
+                    <br>
 
-                        <span id='follow'><span style='font-weight:bold'>$follow</span>フォロー</span>
-                        <span id='follower'><span style='font-weight:bold'>$follower</span>フォロワー</span>
-                        <span id='post'><span style='font-weight:bold'>$post</span>投稿</span>
-                    </div>
-                ";
-            }
-        ?>
-    </div>
+                    <span id='follow'><span style='font-weight:bold'>$follow</span>フォロー</span>
+                    <span id='follower'><span style='font-weight:bold'>$follower</span>フォロワー</span>
+                    <span id='post'><span style='font-weight:bold'>$post</span>投稿</span>
+                </div>
+            ";
+        }
+    ?>
 </body>
 </html>

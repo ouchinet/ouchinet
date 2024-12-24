@@ -81,8 +81,7 @@
     <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
-    <div>
-        <header>
+    <header>
         <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
             <img src="
                 <?php echo $iconurl;?>
@@ -104,19 +103,18 @@
         <a href="../newpost">
             <img src="../asset/gui/menu/newpost.png" style="border-radius: 100%;width: 5em;" title="新規投稿">
         </a>
-        </header>
+    </header>
 
-        <h1>タイムライン<a style="margin-left: 5px;" href="javascript: reload()">↻</a></h1>
-        <?php
-            if($post_num === -1){
-                echo "
-                    <p>まだ投稿がありません</p>
-                    <a href='../newpost' style='border: solid #008000 3px'>最初の投稿をする！</a>
-                ";
-            }else{
-                echo $post_html;
-            }
-        ?>
-    </div>
+    <h1>タイムライン<a style="margin-left: 5px;" href="javascript: reload()">↻</a></h1>
+    <?php
+        if($post_num === -1){
+            echo "
+                <p>まだ投稿がありません</p>
+                <a href='../newpost' style='border: solid #008000 3px'>最初の投稿をする！</a>
+            ";
+        }else{
+            echo $post_html;
+        }
+    ?>
 </body>
 </html>
