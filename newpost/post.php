@@ -65,5 +65,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode("投稿しました");
 }else{
     ob_end_clean();
-    header("Location: ./index.php");
+    header("Location: /index.php");
 }

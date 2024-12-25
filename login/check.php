@@ -1,14 +1,5 @@
 <?php
-    // 暗号化
-    function encrypt($data){
-        return $data === null ? null :
-            openssl_encrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
-    }
-
-    function decrypt($data){
-        return $data === null ? null :
-            openssl_decrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
-    }
+    require "../database/usrutil.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $user = $_POST["username"];
@@ -27,13 +18,8 @@
             $message = "パスワードを入力してください";
             $error = true;
         }else{
-            // ユーザーリストを取得
-            $userlist = file_get_contents("../database/account/list.json");
-            $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-            $userlist = json_decode($userlist,true);
-
             // ログイン処理
-            if($password=== decrypt(urldecode($userlist[$user]["password"]))){
+            if(IsLogin_Bool($user, $password)){
                 // ログイン成功
                 setcookie(
                     "username",
@@ -46,7 +32,7 @@
                 );
                 setcookie(
                     "password",
-                    urlencode(encrypt($password)),
+                    $password,
                     time() + (60 * 60 * 24 * 400), // 400日間有効
                     "/",
                     null,
@@ -63,7 +49,7 @@
                     true,
                 );
                 
-                header("Location:../home");
+                header("Location:/home");
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";
@@ -71,10 +57,10 @@
             }
         }
     } else if(isset($_COOKIE["login"]) !== false){
-        header("Location:../home");
+        header("Location:/home");
         exit();
     }else{
-        header("Location:./index.php");
+        header("Location:/index.php");
         exit();
     }
 ?>
@@ -95,6 +81,6 @@
 <body>
     <h1>内容にエラーがあります</h1>
     <p style="border-radius: 10px;background-color:red;width:250px;">エラー内容：<?php echo $message;?></p>
-    <a href="index.php">ログイン画面に戻る</a>
+    <a href="/login">ログイン画面に戻る</a>
 </body>
 </html>
