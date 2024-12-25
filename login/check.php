@@ -1,14 +1,5 @@
 <?php
-    // 暗号化
-    function encrypt($data){
-        return $data === null ? null :
-            openssl_encrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
-    }
-
-    function decrypt($data){
-        return $data === null ? null :
-            openssl_decrypt($data, "AES-256-CBC", json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_key"], 0, json_decode(mb_convert_encoding(file_get_contents("../database/config.json"), 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN'),true)["aes_iv"]);
-    }
+    require "../database/usrutil.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $user = $_POST["username"];
@@ -27,11 +18,6 @@
             $message = "パスワードを入力してください";
             $error = true;
         }else{
-            // ユーザーリストを取得
-            $userlist = file_get_contents("../database/account/list.json");
-            $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-            $userlist = json_decode($userlist,true);
-
             // ログイン処理
             if($password=== decrypt(urldecode($userlist[$user]["password"]))){
                 // ログイン成功
@@ -67,6 +53,7 @@
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";
+                $message .= "\n" . decrypt(urldecode($userlist[$user]["password"])) . " ≠ " . $password;
                 $error = true;
             }
         }
