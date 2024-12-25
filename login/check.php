@@ -71,10 +71,10 @@
             }
         }
     } else if(isset($_COOKIE["login"]) !== false){
-        header("Location:../home");
+        header("Location:/home");
         exit();
     }else{
-        header("Location:./index.php");
+        header("Location:/index.php");
         exit();
     }
 ?>
@@ -95,6 +95,6 @@
 <body>
     <h1>内容にエラーがあります</h1>
     <p style="border-radius: 10px;background-color:red;width:250px;">エラー内容：<?php echo $message;?></p>
-    <a href="index.php">ログイン画面に戻る</a>
+    <a href="/login">ログイン画面に戻る</a>
 </body>
 </html>

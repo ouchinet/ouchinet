@@ -19,22 +19,22 @@
         // パスワードがあってない、またはログインされてない場合はログイン画面へ
         try{
         if(decrypt(urldecode($_COOKIE["password"])) !== decrypt(urldecode($userlist[$_COOKIE["username"]]["password"]))){
-            header("Location:../login");
+            header("Location:/login");
             exit();
         }
         } catch(error){exit();}
 
         // アイコン処理
         if($userlist[$_COOKIE["username"]]["icon"] === "default"){
-            $iconurl = "../asset/gui/default-icon.png";
+            $iconurl = "/asset/gui/default-icon.png";
         }else{
-            $iconurl = "../database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
+            $iconurl = "/database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
         }
 
         $user = $_GET["p"];
 
         if($user === ""){
-            header("Location: ../home");
+            header("Location: /home");
             exit();
         }
 
@@ -50,9 +50,9 @@
             $post = $userlist[$user]["post"];
 
             if($userlist[$user]["icon"] === "default"){
-                $usericonurl = "../asset/gui/default-icon.png";
+                $usericonurl = "/asset/gui/default-icon.png";
             }else{
-                $usericonurl = "../database/account/icon/". $user . "." .$userlist[$user]["icon"];
+                $usericonurl = "/database/account/icon/". $user . "." .$userlist[$user]["icon"];
             }
         }
     }else{
@@ -69,31 +69,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム | おうちネット</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
     <header>
-        <a href="../profile?p=<?php echo $_COOKIE["username"];?>">
+        <a href="/profile?p=<?php echo $_COOKIE["username"];?>">
             <img src="
                 <?php echo $iconurl;?>
             " style="border-radius: 100%;width: 5em;" title="プロフィール">
         </a>
 
-        <a href="../home">
-            <img src="../asset/gui/menu/home.png" style="border-radius: 100%;width: 5em;" title="ホーム">
+        <a href="/home">
+            <img src="/asset/gui/menu/home.png" style="border-radius: 100%;width: 5em;" title="ホーム">
         </a>
 
-        <a href="../search">
-            <img src="../asset/gui/menu/search.png" style="border-radius: 100%;width: 5em;" title="通知">
+        <a href="/search">
+            <img src="/asset/gui/menu/search.png" style="border-radius: 100%;width: 5em;" title="通知">
         </a>
 
-        <a href="../notice">
-            <img src="../asset/gui/menu/notice.png" style="border-radius: 100%;width: 5em;" title="通知">
+        <a href="/notice">
+            <img src="/asset/gui/menu/notice.png" style="border-radius: 100%;width: 5em;" title="通知">
         </a>
 
-        <a href="../newpost">
-            <img src="../asset/gui/menu/newpost.png" style="border-radius: 100%;width: 5em;" title="新規投稿">
+        <a href="/newpost">
+            <img src="/asset/gui/menu/newpost.png" style="border-radius: 100%;width: 5em;" title="新規投稿">
         </a>
     </header>
 

@@ -38,8 +38,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ポストを作成 | おうちネット</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../database/ouchinet.png" type="image/x-icon">
+    <link rel="stylesheet" href="/newpost/style.css">
+    <link rel="icon" href="/database/ouchinet.png" type="image/x-icon">
 </head>
 <body>
     <a id="back" href="javascript:back()">←</a>
@@ -51,6 +51,6 @@
 
     <div class="message"></div>
 
-    <script src="./script.js"></script>
+    <script src="/newpost/script.js"></script>
 </body>
 </html>
