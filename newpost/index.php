@@ -20,16 +20,16 @@
     // パスワードがあってない、またはログインされてない場合はログイン画面へ
     try{
     if(decrypt(urldecode($_COOKIE["password"])) !== decrypt(urldecode($userlist[$_COOKIE["username"]]["password"]))){
-        header("Location:../login");
+        header("Location:/login");
         exit();
     }
     } catch(error){exit();}
 
     // アイコン処理
     if($userlist[$_COOKIE["username"]]["icon"] === "default"){
-        $iconurl = "../asset/gui/default-icon.png";
+        $iconurl = "/asset/gui/default-icon.png";
     }else{
-        $iconurl = "../database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
+        $iconurl = "/database/account/icon/". $_COOKIE["username"] . "." .$userlist[$_COOKIE["username"]]["icon"];
     }
 ?>
 <!DOCTYPE html>
