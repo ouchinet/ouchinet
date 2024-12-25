@@ -105,7 +105,7 @@
         </a>
     </header>
 
-    <h1>タイムライン<a style="margin-left: 5px;" href="javascript: reload()">↻</a></h1>
+    <h1>タイムライン<a style="margin-left: 5px;" href="javascript: location.reload()">↻</a></h1>
     <?php
         if($post_num === -1){
             echo "
