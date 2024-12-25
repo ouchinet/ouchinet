@@ -103,3 +103,28 @@ header{
     width: 5em;
     color: #71767B;
 }
+
+/*メッセージ*/
+.message {
+    position: fixed;
+    top: 20px;
+    right: -100%;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: right 0.25s ease-in-out;
+}
+
+.show {
+    right: 20px;
+}
+
+.error {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.noerror {
+    background-color: #00ff00;
+    color: #000000;
+}

@@ -1,5 +1,7 @@
 {
     "server-name": "ouchinet",
     "aes_key": "oklyuodzjkfsl_key",
-    "aes_iv": "oklyuodzjkfsl_iv"
+    "aes_iv": "oklyuodzjkfsl_iv",
+
+    "oneloadposts": 1
 }

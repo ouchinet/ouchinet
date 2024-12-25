@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         "date" => date("Y-m-d"),
         "time" => date("H:i"),
         "user" => $user,
-        "like" => 0,
+        "like" => [],
         "reply" => []
     );
 
@@ -50,11 +50,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }, json_encode($postlist, JSON_PRETTY_PRINT)));
     file_put_contents("../database/post/post-number.txt", $post_num);
 
+
+
     $userlist = file_get_contents("../database/account/list.json");
     $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
     $userlist = json_decode($userlist,true);
 
-    $userlist[$user]["post"] = $userlist[$user]["post"] + 1;
+    $userlist[$user]["post"]++;
+    $userlist[$user]["posts"][count($userlist[$user]["posts"])] = strval($post_num); // 投稿番号を末尾に追加
 
     file_put_contents("../database/account/list.json", preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($matches) {
         return mb_convert_encoding(pack("H*", $matches[1]), "UTF-8", "UTF-16");

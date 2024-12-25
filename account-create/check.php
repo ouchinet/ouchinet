@@ -67,6 +67,7 @@
                     "number" => intval(file_get_contents("../database/account/account-number.txt")) + 1,
                     "name" => urlencode($user),
                     "bio" => "",
+                    "posts" => [],
                     "email" => urlencode($email),
                     "password" => urlencode(encrypt($password)),
                     "icon" => "default",

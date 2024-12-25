@@ -3,10 +3,14 @@
         "number": 1,
         "name": "テストアカウント",
         "bio": "テスト用アカウントです。<br>自己紹介は特にないです。",
+        "posts": [
+            "2",
+            "3"
+        ],
         "email": "test%40test.com",
         "password": "nfO9uWT0%2BgsyKXKm61HkDA%3D%3D",
         "icon": "default",
-        "post": 1,
+        "post": 3,
         "follow": [],
         "follower": []
     }
