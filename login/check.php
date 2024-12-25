@@ -49,7 +49,7 @@
                     true,
                 );
                 
-                header("Location:../home");
+                header("Location:/home");
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";
