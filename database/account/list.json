@@ -4,7 +4,7 @@
         "name": "テストアカウント",
         "bio": "テスト用アカウントです。<br>自己紹介は特にないです。",
         "email": "test%40test.com",
-        "password": "nfO9uWT0%2BgsyKXKm61HkDA%3D%3D",
+        "password": "$2y$10$gsbq75NU2ceUDKKNZ24rZex7jc9vtYMLyzOFB1Vdvw4srFuuhAzfi",
         "icon": "default",
         "post": 1,
         "follow": [],

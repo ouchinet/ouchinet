@@ -19,7 +19,7 @@
             $error = true;
         }else{
             // ログイン処理
-            if($password=== decrypt(urldecode($userlist[$user]["password"]))){
+            if(IsLogin_Bool($user, $password)){
                 // ログイン成功
                 setcookie(
                     "username",
@@ -32,7 +32,7 @@
                 );
                 setcookie(
                     "password",
-                    urlencode(encrypt($password)),
+                    $password,
                     time() + (60 * 60 * 24 * 400), // 400日間有効
                     "/",
                     null,
@@ -53,7 +53,6 @@
                 exit();
             }else{
                 $message = "ユーザー名またはパスワードが間違っています。";
-                $message .= "\n" . decrypt(urldecode($userlist[$user]["password"])) . " ≠ " . $password;
                 $error = true;
             }
         }

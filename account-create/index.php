@@ -18,7 +18,7 @@
 <body>
     <img src="/database/ouchinet.png" style="border-radius: 100%;width: 5em;">
     <h1>アカウント作成</h1>
-    <form action="/login/check.php" method="post">
+    <form action="/account-create/check.php" method="post">
         <label for="email">メールアドレス:</label>
         <input type="email" id="email" name="email">
         <p>※復元に使用します。</p>

@@ -59,7 +59,7 @@
                     "name" => urlencode($user),
                     "bio" => "",
                     "email" => urlencode($email),
-                    "password" => urlencode(encrypt($password)),
+                    "password" => password_hash($password, PASSWORD_DEFAULT),
                     "icon" => "default",
                     "post" => 0,
                     "follow" => [],
