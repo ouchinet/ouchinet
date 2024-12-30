@@ -1,18 +1,18 @@
 <?php
 
-    require "../database/usrutil.php";
+    require "/database/usrutil.php";
     IsLogin();
     $iconurl = GetIcon();
 
     // 最新ポスト
-    $post_num = file_get_contents("../database/post/post-number.txt");
+    $post_num = file_get_contents("/database/post/post-number.txt");
     $post_num = intval($post_num);
     $post_num = $post_num - 1;
 
     if($post_num != -1){
     
     // 10件表示
-    $posts = file_get_contents("../database/post/list.json");
+    $posts = file_get_contents("/database/post/list.json");
     $posts = mb_convert_encoding($posts, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
     $posts = json_decode($posts,true);
 

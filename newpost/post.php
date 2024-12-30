@@ -26,11 +26,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $postlist = file_get_contents("../database/post/list.json");
+    $postlist = file_get_contents("/database/post/list.json");
     $postlist = mb_convert_encoding($postlist, "UTF8", "ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN");
     $postlist = json_decode($postlist,true);
 
-    $post_num = file_get_contents("../database/post/post-number.txt");
+    $post_num = file_get_contents("/database/post/post-number.txt");
 
     $user = $_COOKIE["username"];
 
@@ -45,18 +45,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         "reply" => []
     );
 
-    file_put_contents("../database/post/list.json", preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($matches) {
+    file_put_contents("/database/post/list.json", preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($matches) {
         return mb_convert_encoding(pack("H*", $matches[1]), "UTF-8", "UTF-16");
     }, json_encode($postlist, JSON_PRETTY_PRINT)));
-    file_put_contents("../database/post/post-number.txt", $post_num);
+    file_put_contents("/database/post/post-number.txt", $post_num);
 
-    $userlist = file_get_contents("../database/account/list.json");
+    $userlist = file_get_contents("/database/account/list.json");
     $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
     $userlist = json_decode($userlist,true);
 
     $userlist[$user]["post"] = $userlist[$user]["post"] + 1;
 
-    file_put_contents("../database/account/list.json", preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($matches) {
+    file_put_contents("/database/account/list.json", preg_replace_callback('/\\\\u([0-9a-fA-F]{4})/', function ($matches) {
         return mb_convert_encoding(pack("H*", $matches[1]), "UTF-8", "UTF-16");
     }, json_encode($userlist, JSON_PRETTY_PRINT)));
 
@@ -65,5 +65,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode("投稿しました");
 }else{
     ob_end_clean();
-    header("Location: /index.php");
+    header("Location:./");
 }

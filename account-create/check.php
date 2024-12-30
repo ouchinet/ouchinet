@@ -1,5 +1,5 @@
 <?php
-    require "../database/encrypt.php";
+    require "/database/encrypt.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $email = $_POST["email"];
@@ -24,7 +24,7 @@
             $error = true;
         }else{
             // ユーザーリストを取得
-            $userlist = file_get_contents("../database/account/list.json");
+            $userlist = file_get_contents("/database/account/list.json");
             $userlist = mb_convert_encoding($userlist, "UTF8", "ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN");
             $userlist = json_decode($userlist,true);
 
@@ -55,7 +55,7 @@
 
             if($error === false){
                 $userlist[$user] = [
-                    "number" => intval(file_get_contents("../database/account/account-number.txt")) + 1,
+                    "number" => intval(file_get_contents("/database/account/account-number.txt")) + 1,
                     "name" => urlencode($user),
                     "bio" => "",
                     "email" => urlencode($email),
@@ -66,18 +66,18 @@
                     "follower" => []
                 ];
 
-                file_put_contents("../database/account/list.json", json_encode($userlist, JSON_PRETTY_PRINT));
-                file_put_contents("../database/account/account-number.txt", strval(file_get_contents("../database/account/account-number.txt")) + 1);
+                file_put_contents("/database/account/list.json", json_encode($userlist, JSON_PRETTY_PRINT));
+                file_put_contents("/database/account/account-number.txt", strval(file_get_contents("/database/account/account-number.txt")) + 1);
 
                 header("Location:../login");
                 exit();
             }
         }
     } else if(isset($_COOKIE["login"]) !== false){
-        header("Location:../home");
+        header("Location:/home");
         exit();
     }else{
-        header("Location:./index.php");
+        header("Location:./");
         exit();
     }
 ?>

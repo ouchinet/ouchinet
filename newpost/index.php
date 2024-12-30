@@ -1,7 +1,7 @@
 <?php
     // ここからログイン認証
     // +アイコン処理
-    require "../database/usrutil.php";
+    require "/database/usrutil.php";
     IsLogin();
     $iconurl = GetIcon();
 ?>

@@ -18,7 +18,7 @@
 <body>
     <img src="/database/ouchinet.png" style="border-radius: 100%;width: 5em;">
     <h1>アカウント作成</h1>
-    <form action="/account-create/check.php" method="post">
+    <form action="./check.php" method="post">
         <label for="email">メールアドレス:</label>
         <input type="email" id="email" name="email">
         <p>※復元に使用します。</p>
@@ -50,7 +50,7 @@
 
         <br>
 
-        <label for="terms"><a href="../terms">利用規約に同意します:</a></label>
+        <label for="terms"><a href="/terms">利用規約に同意します:</a></label>
         <input type="checkbox" id="terms" name="terms">
 
         <br>

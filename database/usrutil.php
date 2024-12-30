@@ -1,6 +1,6 @@
 <?php
 // ユーザーリストを取得
-$userlist = file_get_contents("../database/account/list.json");
+$userlist = file_get_contents("/database/account/list.json");
 $userlist = mb_convert_encoding($userlist, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 $userlist = json_decode($userlist,true);
 

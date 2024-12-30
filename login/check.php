@@ -1,5 +1,5 @@
 <?php
-    require "../database/usrutil.php";
+    require "/database/usrutil.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
         $user = $_POST["username"];
@@ -60,7 +60,7 @@
         header("Location:/home");
         exit();
     }else{
-        header("Location:/index.php");
+        header("Location:./");
         exit();
     }
 ?>

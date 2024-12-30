@@ -2,7 +2,7 @@
     if(isset($_GET["p"])){
         // ここからログイン認証
         // +アイコン処理
-        require "../database/usrutil.php";
+        require "/database/usrutil.php";
         IsLogin();
         $iconurl = GetIcon();
 
@@ -32,7 +32,7 @@
         }
     }else{
         if($user === ""){
-            header("Location: ../home");
+            header("Location: /home");
             exit();
         }
     }
